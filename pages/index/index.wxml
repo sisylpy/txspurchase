@@ -1,0 +1,205 @@
+<!--pagesD/index/index.wxml-->
+<import src='../../template/independentOperation/independentOperation.wxml' />
+
+<view class="customerPage flex-column">
+	<view class="flex-column whiteBack1 with-tb-padding">
+		<view class="with-padding">
+			<view class="flex-row-between ">
+				<view class="flex-column">
+					<view class='dateGroup whiteBack'>
+						<view id='week' class="">{{week}}</view>
+						<view id='date'>{{date}}</view>
+					</view>
+				</view>
+
+				<view class="flex-row-between with-lr-padding" style="width: {{windowWidth - 300}}rpx;">
+					<view class="btnClick flex-column-center" bindtap="toDistributerGoods" hover-class="hover">
+						<image src="../../images/goods.jpg" class="icon"></image>
+						<text class="icon_text">商品</text>
+					</view>
+
+					<view class="btnClick flex-column-center" bindtap="toOpenOrder" hover-class="hover">
+						<image src="../../images/orderpur.png" class="icon"></image>
+						<text class="icon_text">订货</text>
+					</view>
+
+					<view class="btnClick flex-column-center" bindtap="toDepGroup" hover-class="hover">
+						<image src="../../images/addGroup.jpg" class="icon"></image>
+						<text class="icon_text">订货群</text>
+					</view>
+				</view>
+			</view>
+
+			<!-- ./ -->
+			<view class="flex-column  with-padding" bindtap="openUserEdit">
+				<image src='{{userInfo.nxDuUrlChange == 1 ?  url + userInfo.nxDuWxAvartraUrl : userInfo.nxDuWxAvartraUrl}}' class="member_url margin-right"></image>
+				<!-- <text class="with-stb-padding">{{depInfo.nxDepartmentName}}.订货群</text> -->
+				<text class="small">{{userInfo.nxDuWxNickName}}</text>
+			</view>
+
+		</view>
+	</view>
+
+
+	<!-- 配送订单， 自采购订单  -->
+	<view class='navbar   with-border-bottom-main normal'>
+		<block wx:for="{{tabs}}" wx:key="*this">
+			<view id="{{index}}" class="navbar-item {{tab1Index==index?'bar-item-on':''}}" data-index='{{index}}' bindtap='onTab1Click'>
+				<view class='navbar-title'>{{item}}</view>
+			</view>
+		</block>
+		<view class="navbar-slider" style="left: {{sliderLeft}}px; width:{{windowWidth /2}}rpx; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+	</view>
+
+	<view>
+
+		<swiper style="height: {{disArr.length > 0 || independentArr.length > 0 ? swiperHeight : windowHeight - 450}}rpx; " bindtransition="swiperTran" bindanimationfinish="animationfinish" current="{{itemIndex}}" bindchange='swiperChange' data-index='{{itemIndex}}'>
+
+			<!-- 配送订单 -->
+			<swiper-item>
+				<view class="with-padding-bottom margin_bottom with-border-bottom " wx:for="{{disArr}}" wx:for-index="dateIndex" wx:for-item="date" wx:key="date">
+					<view class="with-s-padding  form_title">
+						<text>{{date.date}}</text>
+						<view>
+							<text class="mainColor extreamSmall">{{date.complate}}/{{date.total}}</text>
+							<text class=" extreamSmall gray">已完成</text>
+
+						</view>
+					</view>
+					<view class="with-padding">
+						<view class="applys">
+
+							<view class=" flex-column  whiteBack with-padding with-border-bottom" wx:for="{{date.arr}}" wx:for-index="index" wx:for-item="item" data-index="{{index}}" wx:key="nxDepartmentOrdersId">
+
+								<view class="flex-row">
+									<view class="index margin-right normal">{{index + 1}}.</view>
+									<view class="flex-column" style="width: {{windowWidth - 50}}rpx;">
+										<view class="flex-row-default  with-r-padding ">
+											<view class="flex-row  normal">
+												<text class="margin-right">{{item.nxDistributerGoodsEntity.nxDgGoodsName}}</text>
+												<text class="margin-l-right">{{item.nxDoQuantity}}{{item.nxDoStandard}}</text>
+											</view>
+
+											<view class="order_info">
+												<text class="order_user gray margin-l-right">{{item.nxDepartmentUserEntity.nxDuWxNickName}}</text>
+												<text class="order_time ">{{item.nxDoApplyOnlyTime}}</text>
+											</view>
+
+										</view>
+										<view class="remark" wx:if="{{item.nxDoRemark !== null && item.nxDoRemark.length > 0}}">{{item.nxDoRemark}}</view>
+
+
+										<view class="flex-row  with-tb-padding gray ">
+
+											<view class="flex-row half-row">
+												<text class="margin-l-right ">数量:</text>
+												<text class="margin-l-right" wx:if="{{item.nxDoWeight != null && item.nxDoStatus == 3}}">{{item.nxDoWeight}}{{item.nxDoStandard}}</text>
+											</view>
+
+
+											<view class="flex-row half-row">
+												<text class="margin-l-right">单价:</text>
+												<text class="" wx:if="{{item.nxDoPrice != null && item.nxDoStatus == 3}}">{{item.nxDoPrice}}/{{item.nxGoodsEntity.nxGoodsStandardname}}</text>
+											</view>
+
+
+										</view>
+									</view>
+
+								</view>
+
+
+								<view>
+
+								</view>
+
+
+							</view>
+						</view>
+					</view>
+				</view>
+
+
+				<!-- </scroll-view> -->
+
+
+			</swiper-item>
+
+			<!-- ../Part-one  -->
+			<!-- Part-one -->
+			<swiper-item>
+				<scroll-view scroll-y style="height:{{windowHeight - 100}}rpx">
+
+					<view class=" margin_bottom with-border-bottom " wx:for="{{independentArr}}" wx:key="date" wx:for-index="dateIndex" wx:for-item="date">
+						<!-- date -->
+						<view class="with-s-padding  form_title">
+							<text>{{date.date}}</text>
+							<view>
+								<text class="mainColor extreamSmall">{{date.complate}}/{{date.total}}</text>
+								<text class=" extreamSmall gray">已完成</text>
+							</view>
+						</view>
+						<!--  -->
+						<view class="with-padding1">
+							<view class="applys1">
+								<view class=" flex-column  whiteBack with-padding with-border-bottom" wx:for="{{date.arr}}" wx:key="nxDepartmentOrdersId" wx:for-index="index" wx:for-item="item">
+									<view class="flex-row-between  with-r-padding ">
+
+										<view class="flex-row">
+											<view class="sel-part" style="width: {{windowWidth/8}}rpx; ">
+												<view class="flex-column-center" wx:if="{{item.nxDoStatus == 1}}">
+													<text class="order_time">{{item.nxDoOperationTime}}</text>
+													<view class="flex-row">
+														<image class="icon_sel " src="../../images/copy.png"></image>
+														<text class="order_time">复制</text>
+													</view>
+												</view>
+												<view class="flex-column-center" wx:if="{{item.nxDoStatus == -1}}">
+													<text class="normal">{{index + 1}}.</text>
+
+												</view>
+
+											</view>
+
+											<view class="flex-row-wrap">
+												<view class="flex-row  normal">
+													<text class="margin-right ">{{item.nxDepIndependentGoodsEntity.nxDigGoodsName}}</text>
+													<text class="margin-l-right">{{item.nxDoQuantity}}</text>
+												</view>
+
+												<view class="order_info">
+													<text class="order_user gray margin-l-right">{{item.nxDepartmentUserEntity.nxDuWxNickName}}</text>
+													<text class="order_time ">{{item.nxDoApplyOnlyTime}}</text>
+												</view>
+											</view>
+										</view>
+
+										<view class="flex-column-center selBtn" bindtap="selectIndepend" data-index="{{index}}" data-dateindex="{{dateIndex}}" hover-class="hover">
+											<image class="icon_sel " src="{{item.isSelected ? '../../images/kongjianxuanzhong-2.png' : '../../images/kongjianweixuan.png'}}"></image>
+										</view>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+
+
+				</scroll-view>
+
+
+
+			</swiper-item>
+
+			<!-- ../Part-one  -->
+
+
+		</swiper>
+
+	</view>
+
+
+</view>
+
+
+
+<template is="independentOperation" data='{{selAmount:selAmount}}'></template>

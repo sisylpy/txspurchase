@@ -1,0 +1,27 @@
+<template name="independentOperation">
+
+
+	<view class="operation {{selAmount > 0 ? 'is-active' : ''}}">
+
+		<view class="order_list_content flex-row-between normal">
+			<view class="copy flex-row-between with-lr-padding" style="width: 60%;">
+				<view class="flex-row small">
+					<text>{{selAmount}}</text>
+					<text>个商品</text>
+				</view>
+				<view bindtap="copyText">
+					<text class="middle">复制申请</text>
+				</view>
+
+			</view>
+			<view class="finish with-padding flex-column-center" style="width: 40%; background:#234b50;" bindtap="finishIndependent">
+      <text>完成</text>
+
+				
+			</view>
+		</view>
+
+	</view>
+
+
+</template>

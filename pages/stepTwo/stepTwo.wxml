@@ -1,0 +1,75 @@
+<!--pages/dingSigne/dingSigne.wxml-->
+<view class='container'>
+
+	<!-- 顶部 -->
+	<view class='top flex-column-center'>
+		<image src="../../images/cg.png" class='url'></image>
+	</view>
+
+	<scroll-view scroll-y  class='with-padding with-margin-top with-lr-margin' style='height: {{windowHeight - 340}}rpx; background:white;' bindtap="hideNumber">
+		<!-- 文字 -->
+		<view class='sub-title'>是否分部门订货</view>
+
+		<radio-group class="radio-group with-padding" bindchange="radioChange">
+			<label class="radio">
+				<view class="flex-row with-tb-padding">
+					<radio value="0" checked="true" />
+					<text class='wxNumber'>不分部门</text>
+				</view>
+
+			</label>
+			<label class="radio">
+				<view class="flex-row with-tb-padding">
+					<radio value="1" />
+					<text class='wxNumber'>分部门</text>
+				</view>
+
+			</label>
+		</radio-group>
+
+		<view class='type' wx:if="{{hasSubs == 1}}">
+			<view class="with-tb-padding normal weight_five" >部门数量</view>
+
+			<view class="selcet_content">
+				<text style="margin-right:10rpx; margin-top:20rpx;">一共有</text>
+				<view class="flex-row" style="margin-right:20rpx;" catchtap="showNumber">
+				
+					<view class="flex-column">
+						<input class="numInput" style="width:{{windowWidth/3}}rpx; font-size: 40rpx;  height: 90rpx; line-height: 90rpx; padding-left: 20rpx; " disabled="true" value="{{selNumber}}"></input>
+					
+						<view  class="result {{showNumber ? 'is-active' : ''}}" style="width: {{windowWidth/3 + 20}}rpx;">
+					
+							<view style="width:{{windowWidth/3}}rpx; " class="flex-column result-row" wx:for="12345" wx:for-item="item" wx:for-index="index" catchtap="selIndex" data-index="{{index}}" hover-class="hover" wx:key="index">
+								{{item}}
+							</view>
+						</view>
+					</view>
+					<view class="nabla trigle" >
+					</view>
+				</view>
+				<text style="margin-top:20rpx;">个部门</text>
+			</view>
+		</view>
+
+		<view class='depments with-tb-padding' wx:if="{{selNumber  > 0}}">
+			<view class="with-tb-padding" style="font-size: 38rpx; font-weight: 500;">部门名称</view>
+
+			<view class="dep_content {{selNumber !== '' ? 'is-active' : ''}} flex-column">
+				<input wx:for="{{selNumber}}" wx:for-index="inputIndex" wx:key="index" class="numInput" style="width:{{windowWidth/2}}rpx; font-size: 40rpx;  height: 80rpx; line-height: 80rpx;padding-left: 10rpx; margin-bottom:10rpx;" bindinput="getDepartmentName" data-index="{{inputIndex}}" value="{{departments.nxDepartmentName}}" adjust-position="true"	
+				confirm-type='{{inputIndex == selNumber -1 ? "done" : "next"}}'  hold-keyboard="true"	
+				bindconfirm='clickConfirm'  focus='{{focusIndex == inputIndex ? "true" : ""}}'></input>
+			</view>
+		</view>
+
+	</scroll-view>
+
+
+
+
+	<view wx:if="{{hasSubs == 0}}" class='btn_main next'  catchtap='toGroupName' style="width: {{windowWidth - 40}}rpx;margin-left:20rpx;" hover-class="hover"> 下一步</view>
+	<view  wx:else class='btn_main {{hasSubs == 1 &&  addFinished ? "next" : ""}}'  
+	catchtap='{{hasSubs == 1 &&  addFinished ? "toGroupName" : ""}}' style="width: {{windowWidth - 40}}rpx;margin-left:20rpx;" hover-class='{{hasSubs == 1 &&  addFinished ? "hover" : ""}}'> 下一步</view>
+
+
+
+</view>

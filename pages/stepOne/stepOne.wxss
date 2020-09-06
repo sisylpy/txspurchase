@@ -1,0 +1,36 @@
+/* miniprogram/pages/signe1/enterprisetype.wxss */
+
+page {
+  background: #f6f6f6;
+  
+}
+
+.top {
+  height: 120rpx;
+  background: #fff;
+  padding-top: 20rpx;
+}
+
+.url {
+  height: 110rpx;
+  width: 110rpx;
+}
+
+
+.sub-title {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 46rpx;
+  margin-top: 40rpx;
+}
+
+.radio-group {
+  padding: 20rpx;
+}
+
+.radio {
+  width: 100%;
+  float: left;
+  line-height: 120rpx;
+}
+

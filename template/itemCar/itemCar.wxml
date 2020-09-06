@@ -1,0 +1,38 @@
+<template name="itemCar">
+
+  
+  <view class="order_list {{itemNumber > 0 ? 'is-active' : ''}}">
+<!-- 
+  <view class="add-reduce flex-row-between">
+   <view class="price">
+     <text class="per-price">单价</text>
+     <text class="money">¥</text>
+     <text class="normal">0.8</text>
+   </view>
+   <view class="split"></view>
+   <view class="option flex-row">
+     <view class="option-item"> - </view>
+     <view class="option-number">1</view>
+     <view class="option-item"> + </view>
+   </view>
+  </view> -->
+    <view class="order_list_content">
+     
+      <view class="car">
+       <view class="testtap" bindtap="showCar">
+        <view  class="">{{itemNumber}}个商品</view>
+       </view>
+       
+       
+      </view>
+
+      <!-- <navigator url="/pagesCustomer/order/order"> -->
+        <view class="order_send {{itemNumber > 0 ? 'is-active' : ''}}" bindtap="saveCar">
+          加入购物车 
+        </view>
+      <!-- </navigator> -->
+    </view>
+
+
+  </view>
+</template>

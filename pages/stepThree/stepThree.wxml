@@ -1,0 +1,28 @@
+<!--pages/dingSigne/dingSigne.wxml-->
+<view class='container'>
+
+	<!-- 顶部 -->
+	<view class='top flex-column-center'>
+		<image src="../../images/cg.png" class='url'></image>
+	</view>
+
+	<view class='with-padding with-margin-top' style='height: {{windowHeight - 340}}rpx; background:white;'>
+		<view class='sub-title margin_l_bottom'>从今天开始用手机订货</view>
+		<view class='small margin_bottom'>邀请你的同事加入该群，每个订货群分采购员和订货员2种角色。</view>
+
+		<view class='flex-column'>
+			<view class='normal weight_five margin_l_bottom'>给订货群起个名字</view>
+			<view class='flex-row'>
+				<input  class="normal nameInput" focus="true" bindinput="bindKeyInput" placeholder='{{nickname}}' 
+				 style="width:{{windowWidth /2}}rpx;" />
+				<text class='normal'>.订货群</text>
+			</view>
+		</view>
+	</view>
+
+	<button class="btn_main {{inputed ? 'next' : ''}} " open-type='getUserInfo' style="width:{{windowWidth - 40}}rpx; margin-left:20rpx;" bindgetuserinfo='{{inputed ? "getUserInfo" : ""}}' plain='true'>用微信注册用户</button>
+
+
+
+
+</view>

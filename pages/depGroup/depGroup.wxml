@@ -1,0 +1,79 @@
+<view class="whiteBack " id="mjltest">
+
+	<view class="with-border-bottom with-padding ">
+
+		<view class="flex-column-center top_padding">
+			<view class="flex-row">
+				<view class="flex-column">
+					<text class="dep_name">{{depInfo.nxDepartmentName}}.订货群</text>
+				</view>
+
+				<view class="edit" bindtap="editGroup">
+					<text>修改</text>
+				</view>
+			</view>
+
+		</view>
+		<view class="flex-row-around with-padding">
+			<view class="flex-row ">
+				<image src="../../images/cg.png" class="icon margin-right"></image>
+				<button class="group_btn" open-type="share" data-type="1"> 邀请采购员</button>
+			</view>
+			<view class="flex-row">
+				<image src="../../images/dh.png" class="icon margin-right"></image>
+				<!-- <button class="group_btn"  data-type="2"> 邀请订货员</button> -->
+				<text bindtap="toOpenOrder">邀请订货员</text>
+
+			</view>
+
+		</view>
+	</view>
+
+	<view class="flex-column">
+
+		<view class="flex-column with-border-bottom whiteBack with-padding" wx:for="{{userArr}}" wx:key="nxDepartmentUserId">
+
+			<view class="flex-row-between with-padding "  >
+				<view class="flex-row dep_icon">
+					<image src="{{item.nxDuAdmin == 1 ? '../../images/cg.png' : '../../images/dh.png'}}" class=" dep_img"></image>
+					<image src='{{item.nxDuUrlChange == 1 ?  url + item.nxDuWxAvartraUrl : item.nxDuWxAvartraUrl}}' class="member_url margin-right"></image>
+				</view>
+
+					<view  wx:if="{{item.nxDepartmentUserId !== userInfo.nxDepartmentUserId}}"  
+					class="btnClick" bindtap="openOperation" data-id="{{item.nxDepartmentUserId}}" hover-class="hover">
+					<image src="../../images/jiantouxia.png" class="icon_jiantou"></image>
+				</view>
+			</view>
+
+			<view class="flex-column dep">
+				<view class="flex-row">
+					<text class="middle">{{item.nxDuWxNickName}}</text>
+					<text wx:if="{{item.nxDepartmentUserId == userInfo.nxDepartmentUserId}}">(你自己)</text>
+				</view>
+				<view class="flex-row">
+					<text>{{item.nxDuJoinDate}}</text>
+					<text>加入</text>
+				</view>
+			</view>
+		</view>
+
+	</view>
+
+</view>
+
+
+
+
+<view class='mask {{showOperation ? "is-active" : ""}}' catchtouchmove='ture' catchtap="hideMask" style="height:{{maskHeight < windowHeight ? windowHeight : maskHeight}}rpx;" catchtouchmove='ture'>
+	<view class="flex-column nnn whiteBack ">
+
+		<view class="flex-row  operation_row" bindtap="delUser">
+			<image src="../../images/ashbin_48.png" class="operation_icon"></image>
+			<text class=" margin-right">删除用户</text>
+
+		</view>
+
+
+
+	</view>
+</view>

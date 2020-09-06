@@ -1,0 +1,75 @@
+/* pages/dingSigne/dingSigne.wxss */
+
+page {
+  background: #f6f6f6;
+  
+}
+
+.top {
+  height: 120rpx;
+  background: #fff;
+  padding-top: 20rpx;
+}
+
+.url {
+  height: 110rpx;
+  width: 110rpx;
+    /* float: left; */
+
+  /* margin-left: 300rpx; */
+} 
+
+.nickName {
+  line-height: 110rpx;
+  font-size: 40rpx;
+  float: left;
+   
+  /* background: rebeccapurple; */
+}
+
+.main {
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 20rpx;
+  background: #fff;
+  padding-top: 30rpx;
+} 
+/* .sub-title .intro .inputWhat .inputGroup  {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}  */
+
+.sub-title {
+  
+  font-size: 46rpx;
+}
+
+.intro {
+  
+  margin-top: 20rpx;
+  
+}
+
+.section-title {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 40rpx;
+  font-weight: 600;
+}
+
+
+input {
+  border: 1px solid #eee;
+  height: 100rpx;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+ 
+}
+
+
+
+button.btn_main{
+  border: none;
+  background: lightgray;
+}

@@ -1,0 +1,21 @@
+.operation {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  z-index: 9999;
+}
+
+.operation.is-active {
+  display: block;
+}
+
+.order_list_content {
+  background:#000;
+  border-top: 1px solid lightgray;
+
+  color: #fff;
+
+
+  
+}

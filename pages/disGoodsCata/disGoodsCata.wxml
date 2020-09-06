@@ -1,0 +1,74 @@
+<view class="liziBack">
+
+
+	<view class="top flex-row-center whiteBack margin_bottom">
+
+		<view class="img_view">
+			<image class="top_img" wx:if="{{disImg.length > 0}}" src="{{url + disImg}}" style="width:{{windowWidth - 40}}rpx; height:300rpx;"></image>
+		</view>
+
+
+		<!-- aaa -->
+		<view class=" flex-row-between with-lr-padding" style="margin-top:-{{windowWidth/8}}rpx;">
+			<view class="flex-column-center with-lr-padding">
+				<image src=" {{face}}" wx:if="{{face.length > 0}}" class="face_img" style="width:{{windowWidth/5}}rpx; height:{{windowWidth/5}}rpx; ">
+				</image>
+				<text class="normal">{{name}}</text>
+			</view>
+		</view>
+
+		<!-- bbb -->
+		<view class="flex-cloumn with-lr-padding gray" >
+			<view class="flex-row with-padding">
+				<image src="../../images/lianxiren.png" class="icon margin-right"></image>
+				<text> {{manager}} {{phone}}</text>
+			</view>
+			<view class="with-lr-padding">
+				<image src="../../images/ditu.png" class="icon margin-right"></image>
+				<text>{{address}}</text>
+			</view>
+
+
+
+		</view>
+
+	</view>
+
+
+
+
+	<view class="felx-column   whiteBack  normal margin_bottom" wx:for="{{goodsList}}" wx:for-item="greatGrand" wx:for-index="greatGrandIndex" wx:key="nxDistributerFatherGoodsId">
+		<view class="with-border-bottom with-padding ">
+			<text class="great_grand_name1 explain-words">{{greatGrand.nxDfgFatherGoodsName}}</text>
+		</view>
+
+		<view class="felx-column" wx:for="{{greatGrand.fatherGoodsEntities}}" wx:for-item="grand" wx:for-index="grandIndex" wx:key="nxDistributerFatherGoodsId">
+			<view class=" with-padding with-border-bottom flex-row-between" bindtap="showOrHide" data-greatindex="{{greatGrandIndex}}" data-grandindex="{{grandIndex}}">
+				<text class="normal ">{{grand.nxDfgFatherGoodsName}}</text>
+				<image src="../../images/jian.png" class="icon with-lr-padding" wx:if="{{grand.isShow}}"></image>
+				<image src="../../images/jia.png" class="icon with-lr-padding" wx:else></image>
+			</view>
+			<!-- father hide -->
+			<view class="with-padding with-border-bottom hideView {{grand.isShow ? 'is-active' : ''}}" wx:for="{{grand.fatherGoodsEntities}}" wx:for-item="father" wx:key="nxDistributerFatherGoodsId" wx:for-index="fatherIndex" bindtap="toGoodsList" data-id="{{father.nxDistributerFatherGoodsId}}" hover-class="hover" data-name="{{father.nxDfgFatherGoodsName}}">
+				<view class="flex-row-between ">
+					<!-- {{greatGrandIndex + 1}}.{{grandIndex + 1}}.{{fatherIndex + 1}}   -->
+					<text class=" normal">{{father.nxDfgFatherGoodsName}}
+					</text>
+					<image src="../../images/arrow-right-2.png" class="icon with-blr-padding"></image>
+				</view>
+			</view>
+
+			<view>
+				<!-- <text class="explain-words ">{{grand.subAmount}}个 商品</text> -->
+			</view>
+		</view>
+
+	</view>
+
+
+
+
+
+
+
+</view>

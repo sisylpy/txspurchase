@@ -1,0 +1,146 @@
+.order_list {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  z-index: 999999;
+}
+
+.order_list.is-active {
+  display: block;
+}
+
+.order_list_content {
+  background:#fff;
+  border-top: 1px solid lightgray;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+
+  
+}
+
+.car {
+  /* background: red; */
+  /* flex-basis: 80%; */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 20rpx 20rpx;
+}
+
+.gouwuche {
+  width: 80rpx;
+  height: 70rpx;
+}
+.dot{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  background: red;
+  border-radius: 50%;
+  margin-top: -26rpx;
+  margin-left: 80rpx;
+  text-align: center;
+}
+
+.aaa{
+  display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.order_content {
+  font-size: 30rpx;
+  /* display: flex;
+  flex-flow: row wrap; */
+  flex-grow: 1;
+  position: relative;
+  /* margin-right: 40rpx; */
+}
+
+.order_goods {
+  float: left;
+  margin-right: 6rpx;
+    margin-bottom: 8rpx;
+      white-space: nowrap; /* 规定文本是否折行 */
+      overflow: hidden; /* 规定超出内容宽度的元素隐藏 */
+      text-overflow: ellipsis;
+}
+
+.order_send {
+  font-size: 30rpx;
+  /* color: #f7ca03; */
+   background: rgb(5, 196, 107);
+   color: rgba(255, 255, 255, 0.726);
+  border-radius: 10rpx;
+  /* background: gray; */
+  padding: 20rpx 20rpx;
+}
+.order_send.is-active{
+  color: #fff;
+}
+
+.weighTime{
+  margin-left: 60rpx;
+  font-size: 26rpx;
+  color: rgb(218, 216, 216);
+}
+
+.testtap{
+  /* background: wheat; */
+}
+
+.add-reduce{
+  line-height: 100rpx;
+  border: 1px solid gray;
+  width: 50%;
+  height: 100rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  margin: 0 auto;
+  background: #fff;
+
+}
+.price{
+  flex-basis: 50%;
+  /* background: red; */
+}
+.option{
+  flex-basis: 50%;
+  background: #fff;
+}
+.split{
+  height: 80rpx;
+  width: 1rpx;
+  background: gray;
+}
+
+
+.option-item{
+  flex-basis: 30%;
+  /* background: pink; */
+  text-align: center;
+  font-size: 48rpx;
+
+}
+.option-number{
+  flex-basis: 40%;
+  /* background: gainsboro; */
+  text-align: center;
+  font-size: 48rpx;
+  
+}
+.per-price{
+  font-size: 28rpx;
+  color: rgb(48, 47, 47);
+  padding: 0 10rpx;
+}
+
+.money{
+  font-size: 24rpx;
+  color: rgb(48, 47, 47);
+  margin-right: 4rpx;
+}

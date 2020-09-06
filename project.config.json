@@ -1,0 +1,129 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.11.0",
+	"appid": "wx042578a6884b5c0d",
+	"projectname": "caidi",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/stepOne/stepOne",
+					"pathName": "pages/stepOne/stepOne",
+					"query": "",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/invitePurchaser/invitePurchaser",
+					"pathName": "pages/invitePurchaser/invitePurchaser",
+					"query": "depId=1&disId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesIssue/issuePage/issuePage",
+					"pathName": "pagesIssue/issuePage/issuePage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesIssue/customerList/customerList",
+					"pathName": "pagesIssue/customerList/customerList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/depGroup/depGroup",
+					"pathName": "pages/depGroup/depGroup",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/depGroupEdit/depGroupEdit",
+					"pathName": "pages/depGroupEdit/depGroupEdit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/invitePurchaser/invitePurchaser",
+					"pathName": "pages/invitePurchaser/invitePurchaser",
+					"query": "depId=1&disId=1",
+					"scene": null
+				}
+			]
+		}
+	}
+}

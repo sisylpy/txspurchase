@@ -1,0 +1,206 @@
+/**index.wxss**/
+
+
+/*  */
+page{
+  background: #f5f5f5;
+}
+
+.member_url{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.navbar {
+  display: flex;
+  position: relative;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  /* border-bottom: 1rpx solid #e5e5e5; */
+  /* background-color: #0d4d43; */
+  height: 80rpx;
+  padding: 10rpx 0;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+
+}
+
+.navbar .navbar-item {
+  position: relative;
+  display: block;
+  flex: 1;
+  /* padding: 13px 0; */
+  text-align: center;
+  font-size: 0;
+  line-height: 80rpx;
+  color: #425042;
+}
+
+.navbar .bar-item-on {
+  color: #187e6e;
+  
+}
+
+.navbar .navbar-title {
+  display: inline-block;
+  font-size: 32rpx;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.navbar .bar-item-on .navbar-title {
+  color: #187e6e;
+  font-weight: 600;
+}
+
+.navbar .navbar-slider {
+  position: absolute;
+  content: " ";
+  left: 0;
+  bottom: 0;
+  width: 100rpx;
+  height: 5rpx;
+  background-color: #187e6e;
+  /* border-bottom: 1px solid lightgray; */
+  /* box-shadow: 0 0 0 2rpx #b8b9b981; */
+
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+/*  */
+
+.setting{
+  line-height: 70rpx;
+
+}
+
+
+.dateGroup{
+  width:140rpx;
+  height:150rpx;
+  border: 1px solid rgba(211, 211, 211, 0.7) ;
+  border-radius: 10rpx;
+  text-align: center;
+  flex-grow: 0;
+
+
+}
+
+#week{
+  font-size: 32rpx;
+  color: red;
+  margin-top: 10rpx;
+  /* background: green; */
+}
+#date{
+  font-size: 80rpx;
+  margin-top: -12rpx;
+
+}
+
+
+
+
+.titlename{
+  width:800rpx;
+  border-bottom:1px solid lightgray;
+  margin-left: 20rpx;
+  padding-bottom: 10rpx;
+  margin-top: 20rpx;
+
+}
+
+
+/* shenqing */
+.groups{
+  width:100%;
+  float: left;
+  /* margin-top: 30rpx; */
+}
+
+.form_title{
+  /* background: #3ba3a3; */
+  /* color: #fff; */
+  padding: 20rpx 20rpx;
+}
+.applys{
+  border: 1px solid lightgray;
+}
+
+
+.btn-add-lg {
+  position: fixed;
+  right: 50rpx;
+  bottom: 50rpx;
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 50%;
+  background:#236363;
+}
+.btn-add-sm{
+  display: none;
+   position: fixed;
+  right: 65rpx;
+  bottom: 210rpx;
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  background:#3ba3a3;
+}
+.btn-add-sm.active{
+  display: block;
+}
+
+/* dingdan */
+
+
+
+/*  */
+.btn_item{
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  border: 1px solid gray;
+  text-align: center;
+  padding: 6rpx 0;
+  margin-bottom: 30rpx;
+  margin-top: 20rpx;
+
+
+}
+
+.face_url{
+  width: 150rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+  /* border-radius: 50%; */
+
+}
+
+
+.selBtn{
+  /* background: red; */
+  padding: 30rpx 30rpx;
+  border-radius: 50%;
+}
+.icon_sel{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+
+.btnClick{
+  width: 120rpx;
+  border-radius: 20rpx;
+  padding: 10rpx 0 ;
+  /* background: yellow; */
+
+}
+
+
+@import "/template/independentOperation/independentOperation.wxss";

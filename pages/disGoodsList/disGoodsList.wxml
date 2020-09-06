@@ -1,0 +1,62 @@
+
+<!-- top -->
+<view class="with-padding topBack normal">
+	<text>{{goodsFatherName}}</text>
+</view>
+<!-- ./top -->
+
+<!-- goods -->
+<view class="flex-column ">
+
+	<view class="flex-row-between   with-border-bottom  whiteBack with-padding" wx:for="{{goodsList}}" wx:key="" wx:for-item="goods" wx:for-index="index" wx:key="nxDistributerGoodsId">
+
+		<view class="">
+
+			<view class="flex-row normal">
+				<text class="small" wx:if="{{goods.nxGoodsBrand.length > 0 && goods.nxGoodsBrand !==  'null'}}">[{{goods.nxDgGoodsBrand}}]</text>
+				
+				<text class="normal gray" wx:if="{{goods.nxDgPullOff == 1}}">(下架) {{goods.nxDgGoodsName}}</text>
+				<text class="normal"  wx:else>{{goods.nxDgGoodsName}}</text>
+
+				<text class="small" wx:if="{{goods.nxDgGoodsDetail.length > 0 && goods.nxDgGoodsDetail !==  'null'}}">({{goods.nxDgGoodsDetail}})</text>
+			</view>
+
+			<view class="flex-row with-tb-padding small gray" style="width:{{windowWidth - 180}}rpx;">
+				<view class="flex-row half-row">
+					<text class="margin-l-right shrink_fix">规格:</text>
+					<text class="shrink_change"> {{goods.nxDgGoodsStandardname}}</text>
+				</view>
+				<view class="flex-row half-row">
+					<text class="margin-l-right shrink_fix">产地:</text>
+					<text wx:if="{{goods.nxDgGoodsPlace !== null}}" class="shrink_change"> {{goods.nxDgGoodsPlace}}</text>
+				</view>
+			</view>
+
+			<view class="flex-row-default middle gray">
+				<text class="margin-l-right shrink_fix" >订货单位:</text>
+				<view class="flex-row-wrap shrink_change">
+					<text class="standard margin_bottom">{{goods.nxDgGoodsStandardname}}</text>
+					<text class="standard margin_bottom" wx:for="{{goods.distributerStandardEntities}}" wx:for-item="standard" wx:key="nxDistributerStandardId">{{standard.nxDsStandardName}}</text>
+				</view>
+			</view>
+		</view>
+
+
+		<view>
+		  <view class="iconClick" wx:if="{{goods.isDownload == 1}}">
+				<image class="icon" src="/images/ok.png" data-index="{{index}}"></image>
+			</view>
+			<view class="iconClick"  wx:else bindtap="toAddDepNxGoods" hover-class="hover" data-index="{{index}}">
+				<image class="icon" src="/images/download.png" ></image>
+			</view>
+
+		</view>
+	</view>
+
+
+
+
+
+
+
+</view>

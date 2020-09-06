@@ -1,0 +1,21 @@
+<view class="flex-column middle">
+
+
+	<view class="with-padding with-padding flex-column ">
+		<text class="gray">订货群名称</text>
+    <view class="big flex-row">
+        <input value="{{groupName}}" class="group_input" bindinput="getGroupName" focus="true"></input>
+				<text>.订货群</text>
+    </view>
+
+	</view>
+
+
+
+
+	<view class="saveBtn {{canSave ? 'is-active' : ''}}" bindtap="{{canSave ? 'save' : ''}}">保存</view>
+
+
+
+
+</view>

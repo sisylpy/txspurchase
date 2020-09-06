@@ -1,0 +1,11 @@
+
+
+
+.half-row{
+  width: 50%;
+}
+.iconClick{
+  padding: 40rpx;
+  border-radius: 50%;
+
+}

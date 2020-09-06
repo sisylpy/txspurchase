@@ -1,0 +1,19 @@
+<template name="car">
+  <view class="order_list {{applyArr.length > 0 ? 'is-active' : ''}}">
+    <view class="order_list_content">
+     
+      <view class="car">
+       <view class="testtap" bindtap="showCar">
+        <view  class="dot">{{applyNumber}}</view>
+        <image class="gouwuche" src="/images/gouwuche.png"></image>
+       </view>
+      </view>
+
+        <view class="order_send" bindtap="choiceFinish">
+          选好了  >
+        </view>
+    </view>
+
+
+  </view>
+</template>

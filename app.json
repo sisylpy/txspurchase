@@ -1,0 +1,35 @@
+{
+  
+  "pages":[
+    "pages/index/index",
+    "pages/stepOne/stepOne",
+    "pages/stepTwo/stepTwo",
+    "pages/stepThree/stepThree",
+    "pages/disGoodsCata/disGoodsCata",
+    "pages/disGoodsList/disGoodsList",
+    "pages/depGroupEdit/depGroupEdit",
+    "pages/depUserEdit/depUserEdit",
+    "pages/depGroup/depGroup",
+    "pages/invitePurchaser/invitePurchaser",
+    "pages/login/login"
+  
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#234b50",
+    "navigationBarTitleText": "特鲜配",
+    "navigationBarTextStyle":"white"
+  },
+  "sitemapLocation": "sitemap.json",
+
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+  
+
+
+
+
+
+}
